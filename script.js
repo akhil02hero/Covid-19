@@ -78,7 +78,6 @@ function addalldata(arr) {
     recovered_h1.setAttribute("id", "feeds");
     let deaths_h1 = document.createElement("h1");
     deaths_h1.setAttribute("id", "feeds");
-
     let state = document.createElement("strong");
     let active = document.createElement("strong");
     let deaths = document.createElement("strong");
