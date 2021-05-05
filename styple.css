@@ -21,13 +21,11 @@ body{
     /* left: 2.5%; */
 }
 
-/* #graphdis,#disdis{
-    background-color: #C4C4C4;
-    width:100%;
-    height:500px;
-    margin-top: 35px;
-    margin-bottom: 35px;
+/* #disdis{
+    margin-bottom: 5px;
 } */
+
+
 .table_heading,#table_content{
     margin: 10px;
     display: flex;
