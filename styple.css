@@ -21,13 +21,13 @@ body{
     /* left: 2.5%; */
 }
 
-#graphdis,#disdis{
+/* #graphdis,#disdis{
     background-color: #C4C4C4;
     width:100%;
     height:500px;
     margin-top: 35px;
     margin-bottom: 35px;
-}
+} */
 .table_heading,#table_content{
     margin: 10px;
     /* margin-bottom: 100px; */
@@ -70,7 +70,7 @@ body{
     }
     #heads,#feeds{
         width:17%;
-        height: 80px;
+        height: 70px;
     }
 }
 @media only screen and (min-width:501px) and  (max-width:750px){
