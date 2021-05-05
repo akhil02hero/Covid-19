@@ -1,58 +1,112 @@
-fetch(
-  "https://api.apify.com/v2/key-value-stores/toDWvRj1JpTXiM8FF/records/LATEST?disableRedirect=true"
-)
+// fetch the data from covid19india api
+
+fetch("https://api.covid19india.org/data.json")
   .then((response) => {
     return response.json();
   })
   .then((data) => {
-    // console.log(data);
-    getdata(data);
+    states(data);
   })
   .catch((err) => console.log(err));
 
-function getdata(data) {
-  console.log(data);
-  xlabel = [];
-  ylabel = [];
-  for (var i = 0; i < data.regionData.length; i++) {
-    xlabel.push(data.regionData[i].region);
-    ylabel.push(data.regionData[i].activeCases);
-  }
-  console.log(xlabel);
-  console.log(ylabel);
-  const ctx = document.getElementById("Chart").getContext("2d");
-  const myChart = new Chart(ctx, {
-        type: "bar",
-        data: {
-            labels:xlabel,
-            datasets:[
-                {
-                    label:"covid-19 cases",
-                    data:ylabel,
-                    backgroundColor:['rgba(255, 99, 132, 0.2)'],
-                    borderColor: ["rgba(255, 99, 132, 1)"],
-                    borderWidth: 1,
-                    
-                },
-            ],
-        },
-    });
+// function to display the details of the covid-19 in india statewise
+
+function states(data) {
+  // for (var i=0;i<data.length;i++)
+  console.log(data.statewise);
   
+  var arr = Object.values(data.statewise);
+  addalldata(arr);
 }
 
-// const ctx = document.getElementById("Chart").getContext("2d");
-//   const myChart = new Chart(ctx, {
-//     type: "bar",
-//     data: {
-//       labels: xlabel,
-//       datasets: [
-//         {
-//           label: "covid cases",
-//           data: ylabel,
-//           backgroundColor: ["rgba(255, 99, 132, 0.2)"],
-//           borderColor: ["rgba(255, 99, 132, 1)"],
-//           borderWidth: 1,
-//         },
-//       ],
-//     }}
-    // 
+// function to add data in the html
+
+function addalldata(arr) {
+  let td = document.querySelector("#table_content");
+  console.log(td);
+  for (var i = 1; i < arr.length - 1; i++) {
+    console.log(arr[i].confirmed);
+    let state_h1 = document.createElement("h1");
+    state_h1.setAttribute("id", "feeds");
+    let active_h1 = document.createElement("h1");
+    active_h1.setAttribute("id", "feeds");
+    let confirmed_h1 = document.createElement("h1");
+    confirmed_h1.setAttribute("id", "feeds");
+    let recovered_h1 = document.createElement("h1");
+    recovered_h1.setAttribute("id", "feeds");
+    let deaths_h1 = document.createElement("h1");
+    deaths_h1.setAttribute("id", "feeds");
+    let state = document.createElement("strong");
+    let active = document.createElement("strong");
+    let deaths = document.createElement("strong");
+    let recovered = document.createElement("strong");
+    let confirmed = document.createElement("strong");
+    state.appendChild(document.createTextNode(arr[i].state));
+    confirmed.appendChild(document.createTextNode(arr[i].confirmed));
+    active.appendChild(document.createTextNode(arr[i].active));
+    recovered.appendChild(document.createTextNode(arr[i].recovered));
+    deaths.appendChild(document.createTextNode(arr[i].deaths));
+    state_h1.appendChild(state);
+    confirmed_h1.appendChild(confirmed);
+    active_h1.appendChild(active);
+    recovered_h1.appendChild(recovered);
+    deaths_h1.appendChild(deaths);
+    td.appendChild(state_h1);
+    td.appendChild(confirmed_h1);
+    td.appendChild(active_h1);
+    td.appendChild(recovered_h1);
+    td.appendChild(deaths_h1);
+  }
+}
+
+// var html = `
+// <h1 id="feeds"><strong>${arr[i].state}</strong></h1>
+// <h1 id="feeds"><strong>${arr[i].confirmed}</strong></h1>
+// <h1 id="feeds"><strong>${arr[i].active}</strong></h1>
+// <h1 id="feeds"><strong>${arr[i].recovered}</strong></h1>
+// <h1 id="feeds"><strong>${arr[i].deaths}</strong></h1>
+// `;
+
+// function states(data) {
+//   // for (var i=0;i<data.length;i++)
+//   console.log(data.statewise);
+//   let td = document.querySelector("#table_content");
+//   console.log(td);
+//   var arr = Object.values(data.statewise);
+//   for (var i = 1; i < arr.length - 1; i++) {
+
+//     console.log(arr[i].confirmed);
+//     let state_h1 = document.createElement("h1");
+//     state_h1.setAttribute("id", "feeds");
+//     let active_h1 = document.createElement("h1");
+//     active_h1.setAttribute("id", "feeds");
+//     let confirmed_h1 = document.createElement("h1");
+//     confirmed_h1.setAttribute("id", "feeds");
+//     let recovered_h1 = document.createElement("h1");
+//     recovered_h1.setAttribute("id", "feeds");
+//     let deaths_h1 = document.createElement("h1");
+//     deaths_h1.setAttribute("id", "feeds");
+
+//     let state = document.createElement("strong");
+//     let active = document.createElement("strong");
+//     let deaths = document.createElement("strong");
+//     let recovered = document.createElement("strong");
+//     let confirmed = document.createElement("strong");
+//     state.appendChild(document.createTextNode(arr[i].state));
+//     confirmed.appendChild(document.createTextNode(arr[i].confirmed));
+//     active.appendChild(document.createTextNode(arr[i].active));
+//     recovered.appendChild(document.createTextNode(arr[i].recovered));
+//     deaths.appendChild(document.createTextNode(arr[i].deaths));
+//     state_h1.appendChild(state);
+//     confirmed_h1.appendChild(confirmed);
+//     active_h1.appendChild(active);
+//     recovered_h1.appendChild(recovered);
+//     deaths_h1.appendChild(deaths);
+//     td.appendChild(state_h1);
+//     td.appendChild(confirmed_h1);
+//     td.appendChild(active_h1);
+//     td.appendChild(recovered_h1);
+//     td.appendChild(deaths_h1);
+
+//   }
+// }
