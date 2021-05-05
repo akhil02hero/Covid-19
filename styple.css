@@ -30,7 +30,6 @@ body{
 } */
 .table_heading,#table_content{
     margin: 10px;
-    /* margin-bottom: 100px; */
     display: flex;
     flex-wrap: wrap;
     
@@ -49,6 +48,9 @@ body{
     
 }
 #feeds{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.5em;
     display: flex;
     justify-content: center;
@@ -64,29 +66,30 @@ body{
 
 
 
-@media only screen and (min-width:751px) and  (max-width:1000px){
-	#graphdis{
+@media only screen and (min-width:751px) and  (max-width:1200px){
+	/* #graphdis{
         height: 350px;
-    }
+    } */
     #heads,#feeds{
         width:17%;
-        height: 70px;
+        height: 65px;
     }
 }
 @media only screen and (min-width:501px) and  (max-width:750px){
-	#graphdis{
-        height: 250px;
+	/* #graphdis{
+        height: 250px; */
     }
     #heads,#feeds{
-        width:17%;
+        width:18.5%;
         margin-left: 10px; 
-        
+        height:80px;
+        font-size: 1.25em;
     }
 }
 
 @media only screen and  (min-width:450px) and (max-width:600px){
-	#graphdis{
-        height: 250px;
+	/* #graphdis{
+        height: 250px; */
     }
     #heads,#feeds{
         width:18%;
@@ -94,10 +97,10 @@ body{
        
     }
 }
-@media only screen and (min-width:200px) and (max-width:450px){
-	#graphdis{
+@media only screen and (min-width:300px) and (max-width:450px){
+	/* #graphdis{
         height: 200px;
-    }
+    } */
     #heads,#feeds{
         width:18%;
         height:75px;
