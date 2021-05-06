@@ -14,7 +14,7 @@ function getdata(data) {
   console.log(data);
   xlabel = [];
   ylabel = [];
-  for (var i = 0; i < data.regionData.length; i++) {
+  for (var i = 1; i < data.regionData.length; i++) {
     xlabel.push(data.regionData[i].region);
     ylabel.push(data.regionData[i].activeCases);
   }
