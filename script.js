@@ -16,7 +16,7 @@ function getdata(data) {
   ylabel = [];
   for (var i = 1; i < data.regionData.length; i++) {
     xlabel.push(data.regionData[i].region);
-    ylabel.push(data.regionData[i].activeCases);
+    ylabel.push(data.regionData[i].deaths);
   }
   console.log(xlabel);
   console.log(ylabel);
