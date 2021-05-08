@@ -128,7 +128,7 @@ a {
   align-items: center;
   flex-wrap: wrap;
   font-size: 1.70em;
-  animation: fadeIn 5s;
+  animation: fadeIn 3s;
 }
 @keyframes fadeIn {
   from {
