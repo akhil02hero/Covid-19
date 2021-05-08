@@ -19,7 +19,14 @@
   <body style="background-color: #f8dddd">
     <div class="sticky-top" id="nav1"><strong>Covid-19</strong></div>
     <div class="container">
-     
+      <div class="search">
+        <div class="container">
+          <input type="text" name="search" id="searchbar" placeholder="State/StateCode" />
+          <!-- <button type="submit" id="search">Search</button> -->
+        </div>
+      </div>
+      <div  id="displayinfo">
+      </div>
       <div class="table_heading">
         <h1 id="heads"><strong>State</strong></h1>
         <h1 id="heads"><strong>Confirmed</strong></h1>
@@ -28,23 +35,24 @@
         <h1 id="heads"><strong>Deaths</strong></h1>
       </div>
 
-      <div id="table_content">
-        <!-- <h1 id="feeds"><strong>State</strong></h1>
-        <h1 id="feeds"><strong>State</strong></h1>
-        <h1 id="feeds"><strong>State</strong></h1>
-        <h1 id="feeds"><strong>State</strong></h1>
-        <h1 id="feeds"><strong>State</strong></h1>  -->
-        
-      </div>
-      
+      <div id="table_content"></div>
+
       <div id="disdis"></div>
       <div id="para">
-        <p>For more detailed State wise graph please click here to view state wise comparison of covid-19</p>
-      <button  ><a href="graph.html" style="text-decoration: none"><strong>Graph is waiting</strong></a></button>
-      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <p>
+          For more detailed State wise graph please click here to view state
+          wise comparison of covid-19
+        </p>
+        <button>
+          <a href="graph.html" style="text-decoration: none"
+            ><strong>Graph is waiting</strong></a
+          >
+        </button>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
       </div>
-      
-      <script src='plot.js'></script>
+
+      <script src="plot.js"></script>
+      <script src="main2.js"></script>
     </div>
     <script src="main.js"></script>
     <script
@@ -64,3 +72,11 @@
     ></script>
   </body>
 </html>
+
+<!-- <div class="search">
+  <div class="container">
+    <input type="text" name="search" id="searchbar" placeholder="state">
+  <button type="submit" onclick="piechart();">Search</button>
+  </div>
+  
+</div> -->

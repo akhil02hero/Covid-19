@@ -11,15 +11,15 @@ fetch(
   .catch((err) => console.log(err));
 
 function getdata(data) {
-  console.log(data);
+  // console.log(data);
   xlabel = [];
   ylabel = [];
-  for (var i = 1; i < data.regionData.length; i++) {
+  for (var i = 0; i < data.regionData.length; i++) {
     xlabel.push(data.regionData[i].region);
     ylabel.push(data.regionData[i].activeCases);
   }
-  console.log(xlabel);
-  console.log(ylabel);
+  // console.log(xlabel);
+  // console.log(ylabel);
   const ctx = document.getElementById("Chart").getContext("2d");
   const myChart = new Chart(ctx, {
         type: "bar",

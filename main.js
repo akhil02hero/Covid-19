@@ -12,10 +12,12 @@ fetch("https://api.covid19india.org/data.json")
 // function to display the details of the covid-19 in india statewise
 
 function states(data) {
-  console.log(data.statewise);
+  // console.log(data.statewise);
   
   var arr = Object.values(data.statewise);
+  // console.log(arr)
   addalldata(arr);
+
 }
 
 // function to add data in the html
