@@ -8,7 +8,15 @@ sb.addEventListener('keypress',(e)=>{
             fetchdata();
         }
         else{
-            searchstr=(e.target.value)[0].toUpperCase()+((e.target.value).slice(1)).toLowerCase();
+            res = (e.target.value).split(' ');
+            console.log(res);
+            resu=[];
+            for (var i=0;i<res.length;i++){
+                resu.push((res[i])[0].toUpperCase()+((res[i]).slice(1)).toLowerCase());
+            }
+            console.log(resu);
+            // searchstr=(e.target.value)[0].toUpperCase()+((e.target.value).slice(1)).toLowerCase();
+            searchstr=resu.join(' ');
             fetchdata();
         }
     } 
